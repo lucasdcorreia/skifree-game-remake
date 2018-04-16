@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JS4 - Circunferência</title>
+        <style type="text/css">
+            label {
+                width: 110px;
+                display: inline-block;
+                text-align: right;
+                padding-right: 4px;
+            }
+        </style>
+    </head>
+    <body>
+        <form name="circulo">
+
+            <label for="raio">Informe o raio </label>
+            <input type="number" name="raio" id="raio">
+            <input type="submit" id="button" value="Ok"><br>
+
+            <label for="area">Área do círculo </label>
+            <input type="number" name="area"><br>
+
+            <label for="cincunferencia">Circunferência </label>
+            <input type="number" name="circunferencia">
+            
+        </form>
+            
+        
+            
+        <script type="text/javascript">
+                (function () {
+                    var botao = document.getElementById("button");
+                    botao.onclick = function(){
+                        var raio = document.circulo.raio.value;
+                        var area = document.circulo.area;
+                        area.value = (Math.PI * raio * raio).toFixed(2);
+                        var circunferencia = document.circulo.circunferencia;
+                        circunferencia.value = (2 * Math.PI * raio).toFixed(2);
+                        return false;
+                        
+                    }
+                })();
+                
+        </script>
+        
+    </body>
+</html>
