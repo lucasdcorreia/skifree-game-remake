@@ -1,0 +1,14 @@
+.bar {
+    background-color: red;
+    
+}
+
+td {
+    height: 200px;
+    vertical-align: bottom;
+    margin: 5px;
+}
+
+.sizeInput {
+    width: 80px;
+}
