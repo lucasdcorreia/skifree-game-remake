@@ -1,0 +1,15 @@
+Erro 1: A sintaxe usada para referenciar os seletores no stylesheet está errada, foi colocado um nome de atributo no lugar do id do seletor e vice-versa. Onde está escrito background-color deveria ser o id do bloco que se deseja aplicar o estilo, e no nome do atributo foi colocado o id do bloco.
+Linhas: 10 e 11.
+O que pode ser feito para corrigir esse erro é substituir background-color na linha 10 pelo id "#para" e na linha 11 substituir "p#para" por um nome de atributo.
+
+Erro 2: A tag <body> não foi aberta, para iniciar o conteúdo da página.
+Erro na linha 15.
+Para consertar basta colocar a tag <body> após a tag <head> e antes da tag <h1> e fechar a tag acrescentando </body> antes da tag </html>.
+
+Erro 3: A tag <strong> na linha 18 foi aberta mas não foi fechada.
+Erro na linha 18.
+Para corrigir é preciso fechar a tag "strong" com </strong> aonde o autor preferir ou então retirar a tag <strong> na linha 18.
+
+Erro 4: Foi colocado um código javascript dentro de um tag <style> quando a tag correta seria <script>.
+Erro na linha 24.
+Para corrigir o erro devemos substituir <style> e </style> por <script> e </script> respectivamente.
