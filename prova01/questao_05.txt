@@ -1,0 +1,112 @@
+[Histórico de commits]
+MacBook-Pro-de-Lucas:progweb lucascorreia$ git log
+commit 7f137d4877c963f8d1cbf789e6ea91554eaf5859 (HEAD -> master)
+Author: lucasdcorreia <ldc@icomp.ufam.edu.br>
+Date:   Wed Apr 25 17:14:55 2018 -0400
+
+    Questão 4 - Closures
+
+commit fdc8266065fd1ced0a9be3f0caabc26d1ae59090
+Author: lucasdcorreia <ldc@icomp.ufam.edu.br>
+Date:   Wed Apr 25 16:59:57 2018 -0400
+
+    Questão 3 - Tabuada de número aleatório
+
+commit 491205a29f0224855d066f7257601bb2d2d12673
+Author: lucasdcorreia <ldc@icomp.ufam.edu.br>
+Date:   Wed Apr 25 16:33:21 2018 -0400
+
+    questão 1 - erros
+
+commit 7651404b012a53280b980bfb14aadaed2687cc6b (origin/master)
+Author: lucasdcorreia <ldc@icomp.ufam.edu.br>
+Date:   Fri Apr 20 13:58:58 2018 -0400
+
+    JS5 - Gráfico de Barras
+
+commit 22ba9c8babe31f39a876716554acf95a8173d956
+Author: lucasdcorreia <ldc@icomp.ufam.edu.br>
+Date:   Mon Apr 16 17:46:22 2018 -0400
+
+    JS4
+
+commit bb2f1478963ea7884868abf8176b6295f6515e10
+Author: lucasdcorreia <ldc@icomp.ufam.edu.br>
+Date:   Thu Apr 12 17:47:04 2018 -0400
+
+    JS3
+
+commit 0c3474cb07682549345eb419c9f6d0c4bd9cde45
+Author: lucasdcorreia <ldc@icomp.ufam.edu.br>
+Date:   Mon Apr 9 22:42:54 2018 -0400
+
+    JS1 com arquivo JavaScript separado.
+
+commit c18d4fc900a42206069118a586404c9f0e0d08b4
+Author: lucasdcorreia <ldc@icomp.ufam.edu.br>
+Date:   Mon Apr 9 22:33:17 2018 -0400
+
+    JS2
+
+commit 75d93e58ed512ac78ff2165f10426848a18faa59
+Author: lucasdcorreia <ldc@icomp.ufam.edu.br>
+Date:   Wed Apr 4 18:39:59 2018 -0400
+
+    JS1
+
+commit 1a462b3925e154c8c9885a0de55a9ca10a033d18
+Author: lucasdcorreia <ldc@icomp.ufam.edu.br>
+Date:   Wed Mar 28 23:36:32 2018 -0400
+
+    CSS3
+
+commit b1d6cd275bae9da563a7e7202a1b0c858068b5f7
+Author: lucasdcorreia <ldc@icomp.ufam.edu.br>
+Date:   Mon Mar 26 17:49:13 2018 -0400
+
+    css2
+
+commit 361f244e5ff548560a974ed7b11c6be8c0c631af
+Merge: abb45ad cddd00f
+Author: lucasdcorreia <ldc@icomp.ufam.edu.br>
+Date:   Wed Mar 21 17:57:53 2018 -0400
+
+    commit
+
+commit abb45ad820cfa90897eab04c8ad142ef7fac7f03
+Author: lucasdcorreia <ldc@icomp.ufam.edu.br>
+Date:   Wed Mar 21 17:48:44 2018 -0400
+
+    Exercício 3 - CSS1
+
+commit cddd00f9b4ae59db282965e01b1c2aa0a6705a67
+Author: Lucas <ldc@icomp.ufam.edu.br>
+Date:   Mon Mar 19 17:19:04 2018 -0400
+
+    Update README.md
+
+commit a6c7ad120366f6277365fa1719d9635f72dc9936
+Author: Lucas <ldc@icomp.ufam.edu.br>
+Date:   Mon Mar 19 17:18:22 2018 -0400
+
+    Update README.md
+
+commit 8cce7d8d57079ed2424b55285a47a99f02e1da99
+Author: lucasdcorreia <ldc@icomp.ufam.edu.br>
+Date:   Mon Mar 19 17:02:03 2018 -0400
+
+    Exercícios 1 e 2
+
+commit 0a995c86b37529d2267423455d4aa5019fb81c28
+Author: lucasdcorreia <ldc@icomp.ufam.edu.br>
+Date:   Mon Mar 19 16:55:38 2018 -0400
+
+    first commit
+(END)
+
+----------------------------------------------------
+Questão a:
+O diretório de trabalho é um diretório local onde se pode criar editar os arquivos que serão utilizados no repositório GIT.
+
+Questão b:
+O repositório remoto geralmente está localizado em um servidor remoto e é compartilhado por toda a equipe de trabalho em um projeto. É possível clona-lo em uma máquina na forma de um diretório de trabalho local, onde qualquer alteração feita não afetará instantaneamente o repositório remoto, apenas quando as alterações forem comitadas e "empurradas" para o diretório remoto, através dos comando git commit -m (esse apenas depois de indexar na staging area os novos arquivos e alterações atraves de git add) e git push.
