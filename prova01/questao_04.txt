@@ -1,0 +1,8 @@
+Closure consiste em uma quebra da cadeia de escopo, provendo assim um espaço reservado para uma função no escopo de outra.
+Na declaração "var moo = foo(2);" moo está recebendo o retorno da função "foo(2)", este retorno é uma função, assim moo passa a ser a função 
+
+"function(y){
+    console.log(2 + y + (++baz));
+}"
+
+em que "bazz" é uma variável local de "foo(x)" declarada com o valor 3. O código se aproveita do conceito de closure para acessar a variável "baz=3" através de "moo" que recebeu "foo(2)" e "foo" pode acessar baz com valor igual a 3 porque ambos(tanto foo como a variável baz) estão dentro do escopo de "foo(x)".
