@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Questão 3 - Tabela com tabuada de um número aleatório</title>
+        
+        <style type="text/css">
+            
+            table {
+                text-align: center;
+            }
+            
+            th {
+                background-color: lightgrey;
+            }
+            
+        </style>
+        
+    </head>
+    <body>
+        <script type="text/javascript">
+            numSorteado = Math.floor((Math.random() * 10) + 1);
+            console.log(numSorteado);
+            
+            document.write("<table border = " + 1+ ">");
+            document.write("<tr><th colspan='2'>Produto de "+numSorteado+"</th></tr>");
+            
+            for(var i = 1; i <= 10; i++){
+                document.write("<tr><td>"+i+" x "+numSorteado+"</td><td>"+i*numSorteado+"</td><tr>");
+            }
+            document.write("</table>");
+        </script>
+    </body>
+</html>
