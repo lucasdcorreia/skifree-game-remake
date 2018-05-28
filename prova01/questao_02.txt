@@ -1,1 +1,4 @@
+Apenas um seletor correto.
+Nota: 0.7
+
 Os seletores são "span.cl1"

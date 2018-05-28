@@ -1,3 +1,6 @@
+Logs e conceitos reportados corretamente.
+Nota: 2.0
+
 [Histórico de commits]
 MacBook-Pro-de-Lucas:progweb lucascorreia$ git log
 commit 7f137d4877c963f8d1cbf789e6ea91554eaf5859 (HEAD -> master)

@@ -1,3 +1,6 @@
+Todos os erros foram identificados corretamente.
+Nota: 2.0
+
 Erro 1: A sintaxe usada para referenciar os seletores no stylesheet está errada, foi colocado um nome de atributo no lugar do id do seletor e vice-versa. Onde está escrito background-color deveria ser o id do bloco que se deseja aplicar o estilo, e no nome do atributo foi colocado o id do bloco.
 Linhas: 10 e 11.
 O que pode ser feito para corrigir esse erro é substituir background-color na linha 10 pelo id "#para" e na linha 11 substituir "p#para" por um nome de atributo.
