@@ -140,7 +140,9 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
-        return $this->render('about');
+        $uf = "Universidade Federal do Amazonas";
+        $data = date("d/m/Y H:i:s");
+        return $this->render('about',['data'=>$data]); // essa função render possui dois argumentos, o segundo é um array com variáveis a serem passadas para pagina a ser renderizada.
     }
 
     /**
