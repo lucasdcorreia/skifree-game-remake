@@ -6,9 +6,13 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model common\models\Curso */
 
-$this->title = $model->id_curso;
+$this->registerCssFile("css/text-align.css");
+
+$this->title = $model->nome;
 $this->params['breadcrumbs'][] = ['label' => 'Cursos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+
+
 ?>
 <div class="curso-view">
 
@@ -28,10 +32,14 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id_curso',
+            //'id_curso',
             'nome',
             'sigla',
             'descricao:ntext',
+            [
+                'attribute' => 'quant',
+                'value' =>$model->quant_alunos($model->id_curso),
+            ]
         ],
     ]) ?>
 

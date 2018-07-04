@@ -5,9 +5,16 @@ namespace frontend\controllers;
 use Yii;
 use common\models\User;
 use common\models\UserSearch;
+use common\models\Curso;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+
+use frontend\models\PasswordResetRequestForm;
+use frontend\models\ResetPasswordForm;
+use frontend\models\SignupForm;
+use frontend\models\ContactForm;
 
 /**
  * UserController implements the CRUD actions for User model.
@@ -37,10 +44,13 @@ class UserController extends Controller
     {
         $searchModel = new UserSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $cursos = Curso::find()->all();
+        $array_cursos = ArrayHelper::map($cursos, 'id_curso', 'nome');
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'array_cursos' => $array_cursos,
         ]);
     }
 
@@ -64,14 +74,17 @@ class UserController extends Controller
      */
     public function actionCreate()
     {
-        $model = new User();
-
+        $model = new user();
+        $cursos = Curso::find()->all();
+        $array_cursos = ArrayHelper::map($cursos, 'id_curso', 'nome');
+            
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+                return $this->redirect(['view', 'id' => $model->id_user]);
         }
 
         return $this->render('create', [
             'model' => $model,
+            'array_cursos' => $array_cursos,
         ]);
     }
 
@@ -85,6 +98,8 @@ class UserController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $cursos = Curso::find()->all();
+        $array_cursos = ArrayHelper::map($cursos, 'id_curso', 'nome');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -92,6 +107,7 @@ class UserController extends Controller
 
         return $this->render('update', [
             'model' => $model,
+            'array_cursos' => $array_cursos,
         ]);
     }
 

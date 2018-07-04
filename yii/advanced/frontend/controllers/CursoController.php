@@ -5,6 +5,7 @@ namespace frontend\controllers;
 use Yii;
 use common\models\Curso;
 use common\models\CursoSearch;
+use common\models\User;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -50,10 +51,12 @@ class CursoController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($id)
+    public function actionView($id = '5')
     {
+        $quant_alunos = User::find()->where('id_curso='.$id)->count();
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'quant_alunos' => $quant_alunos,
         ]);
     }
 
@@ -65,6 +68,12 @@ class CursoController extends Controller
     public function actionCreate()
     {
         $model = new Curso();
+//        $model->sigla = "EEEE";
+//        $model->nome = "Algum Curso";
+//        $model->descricao = "Alguma descrição";
+//        $model->save();
+//        echo $model->id;
+//        die();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id_curso]);
@@ -108,6 +117,10 @@ class CursoController extends Controller
 
         return $this->redirect(['index']);
     }
+    
+    public function actionUsers($id){
+        
+    }
 
     /**
      * Finds the Curso model based on its primary key value.
@@ -124,4 +137,6 @@ class CursoController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+    
+    
 }

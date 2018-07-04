@@ -1,9 +1,11 @@
 <?php
 
+
+
 namespace common\models;
 
 use Yii;
-
+use common\models\User;
 /**
  * This is the model class for table "curso".
  *
@@ -45,6 +47,13 @@ class Curso extends \yii\db\ActiveRecord
             'nome' => 'Nome',
             'sigla' => 'Sigla',
             'descricao' => 'Descrição',
+            'quant' => 'Número de Alunos',
         ];
     }
+    
+    public function quant_alunos($id){
+        return User::find()->where('id_curso='.$id)->count();
+    }
+    
+    
 }

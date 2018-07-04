@@ -7,7 +7,11 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use yii\helpers\ArrayHelper;
 use common\models\LoginForm;
+use common\models\Curso;
+use common\models\User;
+
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
@@ -142,7 +146,7 @@ class SiteController extends Controller
     {
         $uf = "Universidade Federal do Amazonas";
         $data = date("d/m/Y H:i:s");
-        return $this->render('about',['data'=>$data]); // essa função render possui dois argumentos, o segundo é um array com variáveis a serem passadas para pagina a ser renderizada.
+        return $this->render('about',['data'=>$data]); // essa função render possui dois argumentos, o segundo é um array com variáveis a serem passadas para página a ser renderizada.
     }
 
     /**
@@ -153,6 +157,9 @@ class SiteController extends Controller
     public function actionSignup()
     {
         $model = new SignupForm();
+        $cursos = Curso::find()->all();
+        $array_cursos = ArrayHelper::map($cursos, 'id_curso', 'nome');
+        
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
                 if (Yii::$app->getUser()->login($user)) {
@@ -163,6 +170,7 @@ class SiteController extends Controller
 
         return $this->render('signup', [
             'model' => $model,
+            'array_cursos' => $array_cursos,
         ]);
     }
 
