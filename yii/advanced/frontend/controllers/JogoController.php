@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 use common\models\Jogada;
+use yii\data\ArrayDataProvider;
 use Yii;
 
 class JogoController extends \yii\web\Controller
@@ -11,14 +12,15 @@ class JogoController extends \yii\web\Controller
         return $this->render('index');
     }
 
-    public function actionRanking(){}
+    public function actionRanking(){
+        $query = Jogada::find()->all();
         $provider = new ArrayDataProvider([
-            'allModels' => Jogada::find()->all(),
+            'allModels' => $query,
             'pagination' => [
-                'pageSize' => 5
+                'pageSize' => 10
             ],
             'sort' => [
-                'attributes' => ['id'],
+                'attributes' => ['id','pontuacao',''],
             ],
         ]);
 
