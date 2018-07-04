@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:8889
--- Generation Time: Jul 04, 2018 at 09:50 AM
+-- Generation Time: Jul 04, 2018 at 09:29 PM
 -- Server version: 5.6.35
 -- PHP Version: 7.1.8
 
@@ -41,7 +41,8 @@ INSERT INTO `curso` (`id_curso`, `nome`, `sigla`, `descricao`) VALUES
 (3, 'Sistemas de Informação', 'IE15', 'O curso de Bacharelado em Sistemas de Informação.'),
 (4, 'Ciência da Computação', 'IE08', 'Curso de Bacharelado em Ciência da Computação.'),
 (5, 'Engenharia de Software', 'IE17', 'Engenharia de Software'),
-(7, 'Administração', 'FA01', 'Curso de administração da UFAM.');
+(7, 'Administração', 'FA01', 'Curso de administração da UFAM.'),
+(8, 'Matemática', 'IE07', 'Curso de licenciatura em matemática.');
 
 -- --------------------------------------------------------
 
@@ -61,17 +62,7 @@ CREATE TABLE `jogada` (
 --
 
 INSERT INTO `jogada` (`id_jogada`, `id_user`, `pontuacao`, `data_hora`) VALUES
-(1, 6, 6000, '2018-06-28 00:57:40'),
-(2, 6, 6000, '2018-06-28 01:11:32'),
-(3, 6, 6000, '2018-06-28 01:45:44'),
-(4, 7, 820, '2018-06-28 02:50:24'),
-(5, 7, 1039, '2018-06-28 02:57:24'),
-(6, 7, 3418, '2018-06-28 03:04:26'),
-(7, 7, 2000, '2018-06-28 03:05:02'),
-(8, 7, 2000, '2018-06-28 03:11:57'),
-(9, 2, 750, '2018-06-28 03:19:12'),
-(10, 2, 870, '2018-07-03 14:17:11'),
-(11, 7, 1314, '2018-07-04 02:13:36');
+(13, 13, 2381, '2018-07-04 15:24:31');
 
 -- --------------------------------------------------------
 
@@ -116,12 +107,12 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`, `id_curso`) VALUES
-(2, 'user2', 'EKoApfjzgVMNOftYaiEpC0jHRJfwQHQg', '$2y$13$YJbtCvFWLI30H.bB7pPG9e8zlFS6/m55.Bvp2kPv5vTMw2io/Px.W', NULL, 'user2@email.com', 10, 0, 0, 3),
-(3, 'user3', 'ou6WmQ6nqH3TEGroYLIzfTSZGCOYhwn4', '$2y$13$imO4OuaBw2WvRxGJjVW.6.ECZVVg4/uqThFtk744mIaqkw.oJzpeC', NULL, 'user3@email.com', 10, 0, 0, 3),
-(4, 'user4', 'U-292Txm4mPmE7r0feSw_QVPzgVZCdUO', '$2y$13$1T6cc0Jqe8kB8lBAfdXJQu2d.Diia/.YvZOj3c8CNEeJqf6onwDO.', NULL, 'user4@email.com', 10, 0, 0, 3),
-(5, 'user6', 'T7htNForfVsoZt6A9ggM4FNCxDdkQ_Hi', '$2y$13$/Jh0WhCo/TlIKaVS5B3vq.GoC/7db5Z96B4GdrPRePmNIoopdpPQy', NULL, 'user6@email.com', 10, 0, 0, 5),
-(6, 'user7', '33Tw5_vk1sUD9-XFhe9Zv26fOecaDjv9', '$2y$13$Doj0Rz8n45Kfq6xyypvC9eKMJ1Gr/qa9v.IgfK.2lJ65bHVi2Xt9u', NULL, 'user7@email.com', 10, 1530125130, 0, 5),
-(7, 'user5', 'NqxuH_tD-ZEMmFkloTkoVOk70HPhEtcp', '$2y$13$qsMtbH49sCpeOjMIeCjWxOaEfCGXkx65UiQjtP7aK/y2m7i8j131O', NULL, 'user5@email.com', 10, 1530168600, 1530168600, 4);
+(8, 'CAMILLA FELIX BARBOSA DE OLIVEIRA', 'RWvd0UwPOaDapUva42Tb0S_xWr6X1VRv', '$2y$13$7kzfsfylRGaLZlItI7gVAeeZVY1GlwlMFQLVpiW.XgVQsbb/q0vGG', NULL, 'camila@email.com', 10, 1530731859, 1530731859, 8),
+(9, 'THIAGO OLIVEIRA NETO', 'zwMgDnnTNKiacyxJKtNRpkVqlgbUHY7Y', '$2y$13$rEYtAU/XD6..V2DfWmjjSudXma5yFdyKmGwL5V1b6nRq9cL22CC5q', NULL, 'thiago@email.com', 10, 1530731985, 1530731985, 4),
+(10, 'JEFFESON WILLIAM PEREIRA', '-AKDO9r2jo6Nzyw2EbHJ1maDHwDxOGTD', '$2y$13$DG4Yyk6J4Qbr29mQTAeyZuoSjQKjPmdmlIOqtVOu.SOHZFMo6nJje', NULL, 'jef@email.com', 10, 1530732050, 1530732050, 5),
+(11, 'GABRIEL MORAES DE QUEIROZ', 'k4aWXNGro4V-nBUkjTjjU4KmQgG1ph3n', '$2y$13$JCQwER4FKk1xG2zWGLeo9OtUWTYVkEY1ZzFGzGkRmrdvsU.wqmGSS', NULL, 'gabriel@email.com', 10, 1530732101, 1530732101, 4),
+(12, 'LUANA BITTENCOURT SARAIVA', 'wKJbS9YLwiwAtU-wObtQT9Jh00DbImYw', '$2y$13$8Nw7DJNY0y/B4W/qse02O.H0avjwWYoQas/LxWzCINrIkyFvDwpBK', NULL, 'luana@email.com', 10, 1530732174, 1530732174, 3),
+(13, 'JOSE DENEY ALVES DE ARAUJO', 'vO8C4cwbhof2GOrotLlgWjhno6x3HJJA', '$2y$13$3u1SgvRWgbPruNzrVrNGyOt83uUAdVNZ/q9GPB5rB9osFv/Ix/ywS', NULL, 'jose@email.com', 10, 1530732241, 1530732241, 7);
 
 --
 -- Indexes for dumped tables
@@ -162,17 +153,17 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `curso`
 --
 ALTER TABLE `curso`
-  MODIFY `id_curso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_curso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `jogada`
 --
 ALTER TABLE `jogada`
-  MODIFY `id_jogada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_jogada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

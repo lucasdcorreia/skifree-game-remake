@@ -50,8 +50,8 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
             [['username'], 'unique'],
             [['email'], 'unique'],
             [['password_reset_token'], 'unique'],
-            [['password'], 'string', 'min' => 6, 'message' => 'A senha deve ter ao menos 6 caracteres.'],
-            [['password'], 'required', 'message' => 'Este campo é obrigatório']
+            [['password'], 'string', 'min' => 6],
+            //[['password'], 'required', 'message' => 'Este campo é obrigatório']
         ];
     }
     

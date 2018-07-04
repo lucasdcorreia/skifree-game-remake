@@ -9,6 +9,9 @@ use yii\grid\GridView;
 
 $this->title = 'Cursos';
 $this->params['breadcrumbs'][] = $this->title;
+
+$this->registerCssFile("css/text-align-center.css");
+
 ?>
 <div class="curso-index">
 
@@ -17,15 +20,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Novo Curso', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Usuários por curso', ['curso/users'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id_curso',
             'nome',
             'sigla',
             'descricao:ntext',

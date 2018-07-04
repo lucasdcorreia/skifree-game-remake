@@ -9,6 +9,8 @@ use common\models\User;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\data\ArrayDataProvider;
+use yii\helpers\ArrayHelper;
 
 /**
  * CursoController implements the CRUD actions for Curso model.
@@ -118,7 +120,40 @@ class CursoController extends Controller
         return $this->redirect(['index']);
     }
     
-    public function actionUsers($id){
+    public function actionUsers($id = '5'){
+        
+        $model = new Curso();
+        $cursos = Curso::find()->all();
+        $array_cursos = ArrayHelper::map($cursos, 'id_curso', 'nome');
+        
+        $query = User::find()->where('id_curso='.$id)->all();
+        $provider = new ArrayDataProvider([
+            'allModels' => $query,
+            'pagination' => [
+                'pageSize' => 10
+            ],
+            'sort' => [
+                'attributes' => ['username','pontuacao',''],
+            ],
+        ]);
+            
+        if ($model->load(Yii::$app->request->post())) {
+            $model = Curso::find()->where(['id_curso'=>Yii::$app->request->post()])->all();
+            $query = User::find()->where(['id_curso'=>$model])->all();
+            $provider = new ArrayDataProvider([
+                'allModels' => $query,
+                'pagination' => [
+                    'pageSize' => 10
+                ],
+                'sort' => [
+                    'attributes' => ['username','pontuacao',''],
+                ],
+            ]);
+            
+            return $this->render('users', ['provider' => $provider, 'model'=>$model]);
+        }
+
+        return $this->render('_users', ['array_cursos' => $array_cursos, 'model' => $model]);
         
     }
 
